@@ -21,3 +21,6 @@ class Multicast:
     def receive_message(self):
         data, address = self.sock.recvfrom(1024) # buffer size is 1024 bytes
         return data.decode(), address
+    
+    def close(self):
+        self.sock.close()
